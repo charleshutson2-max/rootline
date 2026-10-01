@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-base="..">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tree — Rootline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/app.css" />
+</head>
+<body data-shell="member" data-active="tree">
+  <div class="rl-app-bar" data-rl-app-bar></div>
+  <main class="rl-main rl-main--wide">
+
+    <p class="eyebrow">The Hutson–Norwood Tree</p>
+    <h1>Tree canvas</h1>
+    <p class="meta">Simplified SVG prototype — SAMPLE nodes only. Click a person to open their profile.</p>
+    <div class="tree-toolbar">
+      <span class="filter-chip is-active">All lines</span>
+      <span class="filter-chip">Norwood</span>
+      <span class="filter-chip">Hutson</span>
+      <span class="filter-chip">Both</span>
+      <span class="meta" style="margin-left:auto;">Zoom stub · focus Charlie</span>
+    </div>
+    <div class="tree-canvas" role="img" aria-label="Sample family tree diagram">
+      <svg class="tree-svg" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bothRing" x1="0" x2="1">
+            <stop offset="50%" stop-color="#3d2a5c"/>
+            <stop offset="50%" stop-color="#0e6e68"/>
+          </linearGradient>
+        </defs>
+        <!-- connectors -->
+        <path d="M360 90 L360 130 M200 180 L200 130 L520 130 L520 180 M200 230 L200 280 L360 280 L360 320 M520 230 L520 280 L360 280" fill="none" stroke="#e4dcd0" stroke-width="2"/>
+        <!-- Eleanor Norwood -->
+        <a href="person.html?id=eleanor" class="tree-node">
+          <circle class="node-bg" cx="200" cy="70" r="36" fill="#fffbf7" stroke="#3d2a5c" stroke-width="3"/>
+          <text class="node-label" x="200" y="68" text-anchor="middle">Eleanor</text>
+          <text class="node-meta" x="200" y="82" text-anchor="middle">Norwood · SAMPLE</text>
+        </a>
+        <!-- Samuel Hutson + gold honor -->
+        <a href="person.html?id=samuel" class="tree-node">
+          <circle class="node-bg" cx="520" cy="70" r="36" fill="#fffbf7" stroke="#0e6e68" stroke-width="3"/>
+          <circle cx="548" cy="95" r="9" fill="#c6a15b" stroke="#fffbf7" stroke-width="2"/>
+          <text x="548" y="98" text-anchor="middle" font-size="9" font-weight="700" fill="#16121f">★</text>
+          <text class="node-label" x="520" y="68" text-anchor="middle">Samuel</text>
+          <text class="node-meta" x="520" y="82" text-anchor="middle">Hutson · SAMPLE</text>
+        </a>
+        <!-- Margaret both -->
+        <a href="person.html?id=margaret" class="tree-node">
+          <circle class="node-bg" cx="360" cy="200" r="40" fill="#fffbf7" stroke="url(#bothRing)" stroke-width="3.5"/>
+          <text class="node-label" x="360" y="196" text-anchor="middle">Margaret</text>
+          <text class="node-meta" x="360" y="210" text-anchor="middle">Both · TX→LA</text>
+        </a>
+        <!-- Charlie living privacy -->
+        <a href="person.html?id=charlie" class="tree-node">
+          <circle class="node-bg" cx="360" cy="360" r="42" fill="#fffbf7" stroke="#0e6e68" stroke-width="3"/>
+          <text class="node-label" x="360" y="352" text-anchor="middle">Charlie</text>
+          <text class="node-meta" x="360" y="366" text-anchor="middle">Hutson · Living</text>
+          <text class="node-meta" x="360" y="378" text-anchor="middle">Privacy ON</text>
+        </a>
+        <text x="360" y="455" text-anchor="middle" fill="#8a8496" font-size="11" font-family="Source Sans 3, sans-serif">SAMPLE · Not a complete pedigree — teaching structure only</text>
+      </svg>
+    </div>
+    <div class="color-key" style="margin-top:1rem;">
+      <span><i class="ck-plum"></i> Norwood</span>
+      <span><i class="ck-teal"></i> Hutson</span>
+      <span><i class="ck-gold"></i> Honor mark</span>
+    </div>
+
+  </main>
+  <script src="../js/app.js"></script>
+  
+</body>
+</html>

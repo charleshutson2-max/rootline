@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rootline — Brand Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../design-tokens.css" />
+  <style>
+    /* Self-contained fallbacks if tokens file is unavailable */
+    :root {
+      --rl-parchment: #f6f1ea;
+      --rl-ink: #16121f;
+      --rl-plum: #3d2a5c;
+      --rl-wisteria: #c9b6e4;
+      --rl-teal: #0e6e68;
+      --rl-sea-glass: #7ec8c3;
+      --rl-honor-gold: #c6a15b;
+      --rl-ink-muted: #5c5668;
+      --rl-ink-subtle: #8a8496;
+      --rl-surface: #fffbf7;
+      --rl-border: #e4dcd0;
+      --rl-font-serif: "Source Serif 4", "Iowan Old Style", Palatino, "Times New Roman", serif;
+      --rl-font-sans: "Source Sans 3", "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+      --rl-radius-sm: 8px;
+      --rl-radius-md: 12px;
+      --rl-tap-min: 44px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--rl-parchment);
+      color: var(--rl-ink);
+      font-family: var(--rl-font-sans);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    header.hero {
+      border-bottom: 1px solid var(--rl-border);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--rl-ink-muted);
+      margin: 0 0 0.75rem;
+    }
+
+    h1 {
+      font-family: var(--rl-font-serif);
+      font-size: clamp(1.85rem, 4vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0 0 0.75rem;
+      color: var(--rl-plum);
+    }
+
+    .tagline {
+      font-family: var(--rl-font-serif);
+      font-size: 1.25rem;
+      color: var(--rl-ink-muted);
+      margin: 0 0 1.5rem;
+    }
+
+    .color-key {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      font-size: 0.875rem;
+      color: var(--rl-ink-muted);
+    }
+
+    .color-key span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .swatch.plum { background: var(--rl-plum); }
+    .swatch.teal { background: var(--rl-teal); }
+    .swatch.gold { background: var(--rl-honor-gold); }
+
+    section {
+      margin-bottom: 2.75rem;
+    }
+
+    h2 {
+      font-family: var(--rl-font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
+      color: var(--rl-ink);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: var(--rl-tap-min);
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--rl-radius-sm);
+      font-family: var(--rl-font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: default;
+      border: 1.5px solid transparent;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .btn:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--rl-parchment), 0 0 0 4px var(--rl-wisteria);
+    }
+
+    .btn-primary {
+      background: var(--rl-plum);
+      color: var(--rl-parchment);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--rl-teal);
+      border-color: var(--rl-teal);
+    }
+
+    .btn-secondary:focus-visible {
+      box-shadow: 0 0 0 2px var(--rl-parchment), 0 0 0 4px var(--rl-sea-glass);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .person-card {
+      background: var(--rl-surface);
+      border: 1px solid var(--rl-border);
+      border-radius: var(--rl-radius-md);
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem 1rem;
+      align-items: start;
+    }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #e8e0d4, #d4cbc0);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .avatar::after {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .avatar.ring-plum::after {
+      border: 2.5px solid var(--rl-plum);
+    }
+
+    .avatar.ring-teal::after {
+      border: 2.5px solid var(--rl-teal);
+    }
+
+    .avatar.ring-split::after {
+      border: 2.5px solid transparent;
+      background:
+        linear-gradient(var(--rl-surface), var(--rl-surface)) padding-box,
+        linear-gradient(90deg, var(--rl-plum) 50%, var(--rl-teal) 50%) border-box;
+    }
+
+    .person-body { min-width: 0; }
+
+    .person-name {
+      font-family: var(--rl-font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .sample-badge {
+      font-family: var(--rl-font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--rl-ink-muted);
+      border: 1px solid var(--rl-border);
+      border-radius: 4px;
+      padding: 0.1rem 0.35rem;
+      vertical-align: middle;
+    }
+
+    .meta {
+      font-size: 0.875rem;
+      color: var(--rl-ink-muted);
+      margin: 0 0 0.55rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--rl-radius-sm);
+    }
+
+    .chip-norwood {
+      color: var(--rl-plum);
+      background: color-mix(in srgb, var(--rl-wisteria) 50%, var(--rl-parchment));
+    }
+
+    .chip-hutson {
+      color: var(--rl-teal);
+      background: color-mix(in srgb, var(--rl-sea-glass) 40%, var(--rl-parchment));
+    }
+
+    .field-row {
+      font-size: 0.875rem;
+      color: var(--rl-ink-muted);
+      margin: 0;
+    }
+
+    .field-row strong {
+      color: var(--rl-ink);
+      font-weight: 600;
+    }
+
+    .not-known {
+      font-style: italic;
+      color: var(--rl-ink-subtle);
+    }
+
+    /* Honor gold medal — restrained, not cartoon */
+    .honor-medal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.15rem;
+      height: 1.15rem;
+      border-radius: 50%;
+      background: var(--rl-honor-gold);
+      color: var(--rl-ink);
+      flex-shrink: 0;
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--rl-honor-gold) 70%, #000);
+    }
+
+    .honor-medal svg {
+      width: 0.7rem;
+      height: 0.7rem;
+      display: block;
+    }
+
+    .honor-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: color-mix(in srgb, var(--rl-honor-gold) 75%, var(--rl-ink));
+      margin: 0.35rem 0 0;
+    }
+
+    /* Teaching empty state */
+    .empty-state {
+      background: var(--rl-surface);
+      border: 1px dashed var(--rl-border);
+      border-radius: var(--rl-radius-md);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      max-width: 420px;
+    }
+
+    .empty-mark {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      border: 2.5px solid var(--rl-plum);
+      background: transparent;
+      position: relative;
+    }
+
+    .empty-mark::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      border: 1.5px solid color-mix(in srgb, var(--rl-wisteria) 80%, transparent);
+    }
+
+    .empty-state h3 {
+      font-family: var(--rl-font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+    }
+
+    .empty-state p {
+      margin: 0 0 1.25rem;
+      color: var(--rl-ink-muted);
+      font-size: 0.95rem;
+    }
+
+    .empty-state .actions {
+      justify-content: center;
+    }
+
+    footer.note {
+      font-size: 0.8rem;
+      color: var(--rl-ink-subtle);
+      border-top: 1px solid var(--rl-border);
+      padding-top: 1.25rem;
+    }
+
+    footer.note code {
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="eyebrow">Rootline · Brand preview</p>
+      <h1>Two families. One living archive.</h1>
+      <p class="tagline">The Hutson–Norwood living archive.</p>
+      <div class="color-key" aria-label="Line color key">
+        <span><i class="swatch plum" aria-hidden="true"></i> Plum = Norwood</span>
+        <span><i class="swatch teal" aria-hidden="true"></i> Teal = Hutson</span>
+        <span><i class="swatch gold" aria-hidden="true"></i> Gold = Honor only</span>
+      </div>
+    </header>
+
+    <section aria-labelledby="actions-heading">
+      <h2 id="actions-heading">Actions</h2>
+      <div class="actions">
+        <button type="button" class="btn btn-primary">Request access</button>
+        <button type="button" class="btn btn-secondary">Enter invite code</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="people-heading">
+      <h2 id="people-heading">SAMPLE person cards</h2>
+      <div class="cards">
+        <!-- Norwood / plum ring -->
+        <article class="person-card">
+          <div class="avatar ring-plum" role="img" aria-label="Portrait placeholder, Norwood line ring"></div>
+          <div class="person-body">
+            <h3 class="person-name">
+              SAMPLE Norwood Elder
+              <span class="sample-badge">Sample</span>
+            </h3>
+            <p class="meta">1878 – 1952 · San Marcos</p>
+            <div class="chips">
+              <span class="chip chip-norwood">Norwood</span>
+            </div>
+            <p class="field-row"><strong>Occupation:</strong> <span class="not-known">Not yet known</span></p>
+          </div>
+        </article>
+
+        <!-- Hutson / teal ring -->
+        <article class="person-card">
+          <div class="avatar ring-teal" role="img" aria-label="Portrait placeholder, Hutson line ring"></div>
+          <div class="person-body">
+            <h3 class="person-name">
+              SAMPLE Hutson Kin
+              <span class="sample-badge">Sample</span>
+            </h3>
+            <p class="meta">1901 – 1979 · Texas → Los Angeles</p>
+            <div class="chips">
+              <span class="chip chip-hutson">Hutson</span>
+            </div>
+            <p class="field-row"><strong>Buried:</strong> <span class="not-known">Not yet known</span></p>
+          </div>
+        </article>
+
+        <!-- Both / split ring + honor gold medal (deceased) -->
+        <article class="person-card">
+          <div class="avatar ring-split" role="img" aria-label="Portrait placeholder, both lines ring"></div>
+          <div class="person-body">
+            <h3 class="person-name">
+              SAMPLE Bridge Ancestor
+              <span class="honor-medal" title="Military honor" aria-label="Military honor">
+                <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M6 1.2l1.35 2.74 3.02.44-2.18 2.13.52 3.01L6 7.95 3.29 9.52l.52-3.01L1.63 4.38l3.02-.44L6 1.2z"/>
+                </svg>
+              </span>
+              <span class="sample-badge">Sample</span>
+            </h3>
+            <p class="meta">1892 – 1964 · Deceased</p>
+            <div class="chips">
+              <span class="chip chip-norwood">Norwood</span>
+              <span class="chip chip-hutson">Hutson</span>
+            </div>
+            <p class="honor-label">Honor Roll · Military</p>
+            <p class="field-row"><strong>Unit:</strong> <span class="not-known">Not yet known</span></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="empty-heading">
+      <h2 id="empty-heading">Teaching empty state</h2>
+      <div class="empty-state">
+        <div class="empty-mark" aria-hidden="true"></div>
+        <h3>No Norwood photos yet</h3>
+        <p>The archive grows when someone records a memory. Add a portrait or a story when you are ready.</p>
+        <div class="actions">
+          <button type="button" class="btn btn-primary">Record a memory</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="note">
+      <p>Museum + product. Tokens: <code>design-tokens.css</code>. All people labeled SAMPLE — fictional until the Founding Steward confirms. Honor gold is never used as general chrome.</p>
+    </footer>
+  </div>
+</body>
+</html>

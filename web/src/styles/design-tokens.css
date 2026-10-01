@@ -1,0 +1,79 @@
+/**
+ * ROOTLINE design tokens
+ * Authoritative colors from product brief.
+ * Honor gold (#C6A15B) is for medals / Honor Roll only — never general chrome.
+ */
+
+:root {
+  /* ——— Brand core ——— */
+  --rl-parchment: #f6f1ea;
+  --rl-ink: #16121f;
+  --rl-plum: #3d2a5c;       /* NORWOOD — primary chrome, headers, primary buttons */
+  --rl-wisteria: #c9b6e4;   /* NORWOOD soft */
+  --rl-teal: #0e6e68;       /* HUTSON — secondary buttons, Hutson rings/chips */
+  --rl-sea-glass: #7ec8c3;  /* HUTSON soft */
+  --rl-honor-gold: #c6a15b; /* Honor / military / notable ONLY */
+
+  /* ——— Supporting ——— */
+  --rl-ink-muted: #5c5668;
+  --rl-ink-subtle: #8a8496;
+  --rl-surface: #fffbf7;
+  --rl-border: #e4dcd0;
+  --rl-danger: #8b2e2e;
+  --rl-success: #2f5d4a;
+
+  /* ——— Washes (chips, hover) ——— */
+  --rl-plum-wash: color-mix(in srgb, var(--rl-wisteria) 55%, var(--rl-parchment));
+  --rl-teal-wash: color-mix(in srgb, var(--rl-sea-glass) 45%, var(--rl-parchment));
+  --rl-gold-wash: color-mix(in srgb, var(--rl-honor-gold) 28%, var(--rl-parchment));
+
+  /* ——— Typography ——— */
+  --rl-font-serif: var(--font-source-serif), "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --rl-font-sans: var(--font-source-sans), "Source Sans 3", "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+
+  --rl-text-display: 2.75rem;
+  --rl-text-title: 1.85rem;
+  --rl-text-name: 1.2rem;
+  --rl-text-section: 1.125rem;
+  --rl-text-body: 1rem;
+  --rl-text-caption: 0.875rem;
+
+  --rl-leading-tight: 1.25;
+  --rl-leading-body: 1.55;
+  --rl-leading-elder: 1.65;
+
+  /* ——— Spacing & shape ——— */
+  --rl-radius-sm: 8px;
+  --rl-radius-md: 12px;
+  --rl-space-1: 4px;
+  --rl-space-2: 8px;
+  --rl-space-3: 12px;
+  --rl-space-4: 16px;
+  --rl-space-5: 24px;
+  --rl-space-6: 32px;
+  --rl-tap-min: 44px;
+
+  /* ——— Rings ——— */
+  --rl-ring-width: 2.5px;
+  --rl-ring-norwood: var(--rl-plum);
+  --rl-ring-hutson: var(--rl-teal);
+
+  /* ——— Focus (a11y) ——— */
+  --rl-focus-ring: 0 0 0 2px var(--rl-parchment), 0 0 0 4px var(--rl-wisteria);
+  --rl-focus-ring-teal: 0 0 0 2px var(--rl-parchment), 0 0 0 4px var(--rl-sea-glass);
+}
+
+/* Elder large-type mode: set on <html> or app root */
+html.rl-elder-type {
+  font-size: 125%;
+}
+
+html.rl-elder-type body {
+  line-height: var(--rl-leading-elder);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --rl-motion: 0;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Rootline — The Hutson–Norwood living archive",
+  "short_name": "Rootline",
+  "description": "Two families. One living archive.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F6F1EA",
+  "theme_color": "#3D2A5C",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

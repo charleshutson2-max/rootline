@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-base=".">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rootline — Prototype hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body data-shell="hub">
+  <header class="rl-site-header">
+    <a class="rl-logo" href="index.html">Rootline</a>
+    <nav class="rl-site-nav" aria-label="Hub">
+      <a href="website/home.html">Website</a>
+      <a href="member/tree.html">Member app</a>
+      <a href="steward/queue.html">Steward desk</a>
+    </nav>
+  </header>
+  <main class="rl-main rl-main--wide">
+    <p class="eyebrow">Clickable prototype · Deliverable C</p>
+    <h1>Rootline screen set</h1>
+    <p class="lede">The Hutson–Norwood living archive. Museum + product. All people are labeled SAMPLE. Start a journey below or open any screen.</p>
+    <div class="color-key">
+      <span><i class="ck-plum"></i> Plum = Norwood</span>
+      <span><i class="ck-teal"></i> Teal = Hutson</span>
+      <span><i class="ck-gold"></i> Gold = Honor only</span>
+    </div>
+
+    <section class="section" style="margin-top:2rem;">
+      <h2>Journeys</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Visitor → Claim → Member</h3>
+          <ol class="journey-list" style="list-style:decimal;padding-left:1.2rem;">
+            <li><a href="website/home.html">Home</a></li>
+            <li><a href="website/download.html">Download</a></li>
+            <li><a href="member/request-access.html">Request access</a></li>
+            <li><a href="member/onboarding.html">Onboarding</a></li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Invite code → Member</h3>
+          <ol class="journey-list" style="list-style:decimal;padding-left:1.2rem;">
+            <li><a href="member/invite-code.html">Invite code</a> <span class="meta">try SAMPLE-JOIN</span></li>
+            <li><a href="member/onboarding.html">Onboarding</a></li>
+            <li><a href="member/me.html">Me / privacy</a></li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Member → Explore &amp; propose</h3>
+          <ol class="journey-list" style="list-style:decimal;padding-left:1.2rem;">
+            <li><a href="member/tree.html">Tree canvas</a></li>
+            <li><a href="member/people.html">People directory</a></li>
+            <li><a href="member/stories.html">Stories</a></li>
+            <li><a href="member/record-memory.html">Record a memory</a></li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Steward → Approve</h3>
+          <ol class="journey-list" style="list-style:decimal;padding-left:1.2rem;">
+            <li><a href="steward/queue.html">Approval queue</a></li>
+            <li><a href="steward/claims.html">Member claims</a></li>
+            <li><a href="steward/merge.html">Merge tool</a></li>
+            <li><a href="steward/export.html">Export</a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>All screens</h2>
+      <div class="hub-grid">
+        <div class="card hub-card"><a href="website/home.html"><h3>Website home</h3><p class="path">website/home.html</p><p class="meta">Hero · Two families. One living archive.</p></a></div>
+        <div class="card hub-card"><a href="website/download.html"><h3>Download</h3><p class="path">website/download.html</p><p class="meta">App Store / Play / Open in browser</p></a></div>
+        <div class="card hub-card"><a href="member/onboarding.html"><h3>Onboarding</h3><p class="path">member/onboarding.html</p><p class="meta">Approved member teaser</p></a></div>
+        <div class="card hub-card"><a href="member/request-access.html"><h3>Request access</h3><p class="path">member/request-access.html</p><p class="meta">Path B claim form</p></a></div>
+        <div class="card hub-card"><a href="member/invite-code.html"><h3>Invite code</h3><p class="path">member/invite-code.html</p><p class="meta">Path A · SAMPLE-JOIN</p></a></div>
+        <div class="card hub-card"><a href="member/tree.html"><h3>Tree canvas</h3><p class="path">member/tree.html</p><p class="meta">SVG SAMPLE nodes</p></a></div>
+        <div class="card hub-card"><a href="member/person.html?id=charlie"><h3>Person profile</h3><p class="path">member/person.html</p><p class="meta">Charlie · privacy ON</p></a></div>
+        <div class="card hub-card"><a href="member/people.html"><h3>People directory</h3><p class="path">member/people.html</p></a></div>
+        <div class="card hub-card"><a href="member/honor-roll.html"><h3>Honor Roll</h3><p class="path">member/honor-roll.html</p><p class="meta">Military + civic/church</p></a></div>
+        <div class="card hub-card"><a href="member/stories.html"><h3>Stories</h3><p class="path">member/stories.html</p></a></div>
+        <div class="card hub-card"><a href="member/record-memory.html"><h3>Record a memory</h3><p class="path">member/record-memory.html</p></a></div>
+        <div class="card hub-card"><a href="member/timeline.html"><h3>Timeline</h3><p class="path">member/timeline.html</p></a></div>
+        <div class="card hub-card"><a href="member/places.html"><h3>Places map</h3><p class="path">member/places.html</p><p class="meta">Stub · TX → elsewhere</p></a></div>
+        <div class="card hub-card"><a href="member/ask.html"><h3>Ask Rootline</h3><p class="path">member/ask.html</p><p class="meta">Refusal example</p></a></div>
+        <div class="card hub-card"><a href="member/me.html"><h3>Me / privacy</h3><p class="path">member/me.html</p></a></div>
+        <div class="card hub-card"><a href="member/notifications.html"><h3>Notifications</h3><p class="path">member/notifications.html</p><p class="meta">Birthday / remembrance opt-in</p></a></div>
+        <div class="card hub-card"><a href="steward/queue.html"><h3>Approval queue</h3><p class="path">steward/queue.html</p></a></div>
+        <div class="card hub-card"><a href="steward/claims.html"><h3>Member claims</h3><p class="path">steward/claims.html</p></a></div>
+        <div class="card hub-card"><a href="steward/merge.html"><h3>Merge tool</h3><p class="path">steward/merge.html</p></a></div>
+        <div class="card hub-card"><a href="steward/export.html"><h3>Export</h3><p class="path">steward/export.html</p></a></div>
+        <div class="card hub-card"><a href="steward/roles.html"><h3>Role manager</h3><p class="path">steward/roles.html</p></a></div>
+        <div class="card hub-card"><a href="steward/public-toggles.html"><h3>Public-site toggles</h3><p class="path">steward/public-toggles.html</p></a></div>
+      </div>
+    </section>
+    <p class="footer-note">Shared member tabs: Tree · People · Stories · Ask · Me. Steward links from the app bar. Open via file:// or a static server.</p>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

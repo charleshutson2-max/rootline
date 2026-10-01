@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-base="..">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Person — Rootline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/app.css" />
+</head>
+<body data-shell="member" data-active="people">
+  <div class="rl-app-bar" data-rl-app-bar></div>
+  <main class="rl-main">
+
+    <div id="profile">
+      <p class="meta">Loading SAMPLE profile…</p>
+    </div>
+
+  </main>
+  <script src="../js/app.js"></script>
+  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id") || "charlie";
+  const p = RL.people[id] || RL.people.charlie;
+  const root = document.getElementById("profile");
+  const ring = p.line === "both" ? "both" : p.line;
+  const honor = p.honor ? `<span class="chip chip-honor">★ ${p.honorLabel}</span>` : "";
+  const privacy = p.privacy ? `<span class="chip chip-privacy">Privacy ON</span>` : "";
+  const lineChip = p.line === "norwood" ? '<span class="chip chip-norwood">Norwood</span>'
+    : p.line === "hutson" ? '<span class="chip chip-hutson">Hutson</span>'
+    : '<span class="chip chip-both">Both lines</span>';
+  const death = p.living ? "—" : (p.years.split("–")[1] || "Not yet known");
+  const birth = p.living ? "Not yet known <span class=\"meta\">(living profile · private dates)</span>" : (p.years.split("–")[0] || "Not yet known");
+  root.innerHTML = `
+    <div style="display:flex;gap:1.25rem;align-items:flex-start;flex-wrap:wrap;">
+      <div class="avatar avatar-ring ${ring}" style="width:88px;height:88px;font-size:1.5rem;">
+        ${p.initials}
+        ${p.honor ? '<span class="honor-mark">★</span>' : ''}
+      </div>
+      <div style="flex:1;min-width:200px;">
+        <div class="chip-row"><span class="chip chip-sample">SAMPLE</span>${lineChip}${honor}${privacy}</div>
+        <h1 style="margin-top:0.35rem;">${p.name}</h1>
+        <p class="meta">${p.years} · ${p.place}</p>
+      </div>
+    </div>
+    <hr class="divider" />
+    <dl>
+      <div class="fact-row"><dt>Preferred name</dt><dd>${p.name.split(" ")[0]}</dd></div>
+      <div class="fact-row"><dt>Birth</dt><dd>${p.living ? '<span class="unknown">Not yet known</span> <span class="meta">(owner privacy)</span>' : birth}</dd></div>
+      <div class="fact-row"><dt>Death</dt><dd>${p.living ? "—" : death}</dd></div>
+      <div class="fact-row"><dt>Places</dt><dd>${p.place}${p.migration ? " · <em>"+p.migration+"</em>" : ""}</dd></div>
+      <div class="fact-row"><dt>Occupation</dt><dd class="unknown">Not yet known</dd></div>
+      <div class="fact-row"><dt>Military</dt><dd>${p.honor==="military" ? p.honorLabel + " · source required on badge" : '<span class="unknown">Not yet known</span>'}</dd></div>
+      <div class="fact-row"><dt>Public life</dt><dd>${p.honor==="civic" ? "Church &amp; civic leadership (SAMPLE honor)" : '<span class="unknown">Not yet known</span>'}</dd></div>
+      <div class="fact-row"><dt>Address / social</dt><dd>${p.privacy ? '<span class="unknown">Hidden — living owner privacy ON</span>' : '<span class="unknown">Not yet known</span>'}</dd></div>
+    </dl>
+    ${p.privacy ? '<div class="notice notice-privacy"><strong>Living profile:</strong> Stewards cannot publish address, social links, or new photos without this person’s approval.</div>' : ''}
+    <div class="btn-row">
+      <a class="btn btn-secondary" href="tree.html">Back to tree</a>
+      <a class="btn btn-ghost" href="people.html">Directory</a>
+      ${p.honor ? '<a class="btn btn-honor" href="honor-roll.html">Honor Roll</a>' : ''}
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>

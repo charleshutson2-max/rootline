@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-base="..">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ask Rootline — Rootline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/app.css" />
+</head>
+<body data-shell="member" data-active="ask">
+  <div class="rl-app-bar" data-rl-app-bar></div>
+  <main class="rl-main">
+
+    <p class="eyebrow">AI · Approved records only</p>
+    <h1>Ask Rootline</h1>
+    <p class="meta">Never invents ancestors, dates, or ranks. Unknown → refuse + research request.</p>
+    <div class="chat-log" id="chat">
+      <div class="bubble bubble-user">Who served in the military?</div>
+      <div class="bubble bubble-bot">
+        From approved SAMPLE records, <strong>Samuel “Sam” Hutson</strong> carries a military honor: U.S. Army, WWII.
+        <div class="cite">Cited: Person · SAMPLE Samuel Hutson · Honor badge (military)</div>
+      </div>
+      <div class="bubble bubble-user">What was Eleanor’s middle name at birth, and who were her great-grandparents?</div>
+      <div class="bubble bubble-bot">
+        The archive does <strong>not yet know</strong> Eleanor’s birth middle name beyond what is on her SAMPLE preferred record, and it has <strong>no approved records</strong> for her great-grandparents.
+        <br/><br/>I will not invent ancestors or fill gaps. You can file a research request for Steward review.
+        <div class="cite">Refusal · unknown facts · no citation available</div>
+        <div class="btn-row" style="margin:0.75rem 0 0;">
+          <button class="btn btn-secondary" type="button" onclick="alert('Prototype: research request filed.')">File a research request</button>
+        </div>
+      </div>
+    </div>
+    <form class="chat-compose" onsubmit="event.preventDefault(); alert('Prototype chat: responses are scripted exemplars.');">
+      <label class="sr-only" for="askq">Ask a question</label>
+      <input id="askq" type="text" placeholder="Ask about the approved archive…" />
+      <button class="btn btn-primary" type="submit">Ask</button>
+    </form>
+
+  </main>
+  <script src="../js/app.js"></script>
+  
+</body>
+</html>

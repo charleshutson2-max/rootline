@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-base="..">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Public site — Rootline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/app.css" />
+</head>
+<body data-shell="steward" data-active="public">
+  <div class="rl-app-bar" data-rl-app-bar></div>
+  <main class="rl-main rl-main--wide" style="padding-bottom:3rem;">
+<nav class="rl-steward-nav" data-rl-steward-nav aria-label="Steward"></nav>
+
+    <p class="eyebrow">Front door</p>
+    <h1>Public-site toggles</h1>
+    <p class="lede">No living private photos or addresses on the marketing site. Public History Mode stays default OFF (future).</p>
+    <div class="card">
+      <div class="toggle-row">
+        <div>
+          <strong>Public Honor Roll</strong>
+          <p class="hint">Deceased + honored only · default OFF</p>
+        </div>
+        <button type="button" class="toggle" onclick="this.classList.toggle('on')"></button>
+      </div>
+      <div class="toggle-row">
+        <div>
+          <strong>Show mission / archive explainer</strong>
+          <p class="hint">Always appropriate on the public site</p>
+        </div>
+        <button type="button" class="toggle on" onclick="this.classList.toggle('on')"></button>
+      </div>
+      <div class="toggle-row">
+        <div>
+          <strong>Request access form</strong>
+        </div>
+        <button type="button" class="toggle on" onclick="this.classList.toggle('on')"></button>
+      </div>
+      <div class="toggle-row">
+        <div>
+          <strong>Public History Mode</strong>
+          <p class="hint">Future · deceased generations only · default OFF</p>
+        </div>
+        <button type="button" class="toggle" disabled style="opacity:0.45;" title="Coming later"></button>
+      </div>
+    </div>
+    <p class="meta" style="margin-top:1rem;">Preview public home: <a href="../website/home.html">website/home.html</a></p>
+
+  </main>
+  <script src="../js/app.js"></script>
+  
+</body>
+</html>
